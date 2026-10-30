@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="完成几个小选择，查看属于你的偏好类型。"><meta name="theme-color" content="#f7f7f7">
+  <title>测测你更像哪个群友</title><link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <script>try { const s=localStorage.getItem('untitled-theme');document.documentElement.dataset.theme=s==='light'||s==='dark'?s:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(_){}</script>
+  <link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./quiz.css"><link rel="stylesheet" href="./group.css">
+  <script src="./config.js" defer></script><script src="./quiz-config.js" defer></script><script src="./quiz-engine.js" defer></script><script src="./quiz.js" defer></script>
+</head>
+<body class="quiz-page group-quiz">
+  <a class="skip-link" href="#quiz-main">跳到测试内容</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="./index.html" aria-label="返回网站首页"><svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2v28M2 16h28M6 6l20 20M26 6 6 26" stroke="currentColor" stroke-width="3"/></svg><span data-site-name>未名</span><span class="brand-en">GROUPMATES</span></a>
+    <div class="header-right"><a class="quiz-home" href="./index.html"><span aria-hidden="true">↖</span> 返回首页</a><span class="header-divider" aria-hidden="true"></span><button class="icon-button theme-toggle" type="button" aria-label="切换为深色模式" hidden><svg class="moon-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div>
+  </div></header>
+  <main id="quiz-main" class="container quiz-shell">
+    <div class="quiz-topline"><span id="quiz-label">示例问卷 / NO. 001</span><ol class="flow-steps" aria-label="测试步骤"><li data-step="intro" aria-current="step"><span>01</span> 开始</li><li data-step="question"><span>02</span> 作答</li><li data-step="result"><span>03</span> 结果</li></ol></div>
+    <p id="quiz-error" class="quiz-error" role="alert" hidden></p>
+    <noscript><p class="noscript-notice">请开启 JavaScript 后体验问卷与结果功能。</p></noscript>
+    <section id="intro-screen" class="quiz-intro" aria-labelledby="intro-title">
+      <div class="quiz-intro-copy"><p class="eyebrow"><span class="small-dot" aria-hidden="true"></span> FIND YOUR GROUP CHAT TWIN</p><h1 id="intro-title" tabindex="-1">从选择里，<br><span class="muted-title">看见你的偏好。</span></h1><p id="quiz-description" class="quiz-lead"></p><div class="quiz-meta"><span><strong id="total-questions">06</strong> 个问题</span><span><strong id="total-types">03</strong> 位群友</span><span id="quiz-duration">约 2 分钟</span></div><p id="resume-note" class="resume-note" hidden></p><div class="quiz-start-actions"><button id="start-quiz" class="button button-primary" type="button" disabled>开始测试 <span aria-hidden="true">→</span></button><button id="restart-intro" class="text-link" type="button" hidden>重新开始</button></div><p class="quiz-storage-note" id="storage-note">答案仅保存在当前标签页，不会上传。</p></div>
+      <div class="quiz-intro-art" aria-hidden="true"><div class="art-label"><span>YOUR GROUP</span><span>YOUR TWIN</span></div><div class="path-line line-a"></div><div class="path-line line-b"></div><div class="path-line line-c"></div><div class="path-node node-start">?</div><div class="path-node node-a">A</div><div class="path-node node-b">B</div><div class="path-node node-c">C</div><div class="quiz-art-caption">同一个群，<br>不止一种脑回路。<span>WHO SHARES YOUR CHAT ENERGY? ↗</span></div></div>
+    </section>
+    <section id="question-screen" class="question-layout" aria-labelledby="question-title" hidden>
+      <aside class="question-sidebar"><p class="eyebrow">THE QUESTIONNAIRE</p><p class="question-counter"><strong id="question-number">01</strong><span id="question-total">/ 06</span></p><p id="answered-count" class="answered-count" role="status" aria-live="polite">已完成 0 / 6 题</p><div id="quiz-progress" class="quiz-progress" role="progressbar" aria-label="作答进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="quiz-progress-fill"></span></div><details class="question-jump"><summary>题目导航 <span aria-hidden="true">＋</span></summary><div id="question-map" class="question-map" role="group" aria-label="跳转题目"></div></details><button id="save-exit" class="text-link save-exit" type="button">暂存并退出 <span aria-hidden="true">↗</span></button></aside>
+      <div class="question-main"><form id="quiz-form"><fieldset class="question-fieldset"><legend id="question-title" tabindex="-1"></legend><p id="question-hint" class="question-hint">没有标准答案，选择最接近你的一个。</p><div id="answer-options" class="answer-options"></div></fieldset><div class="question-bottom"><button id="previous-question" class="button button-outline" type="button">← 上一题</button><span id="selection-hint" class="selection-hint" aria-live="polite">请选择一个选项</span><button id="next-question" class="button button-primary" type="submit" disabled>下一题 →</button></div></form></div>
+    </section>
+    <section id="result-screen" class="result-screen" aria-labelledby="result-title" hidden>
+      <div class="result-heading"><div><p class="eyebrow">YOUR RESULT / 本次结果</p><p id="result-kicker" class="result-kicker"></p><h1 id="result-title" tabindex="-1"></h1><div id="result-tags" class="result-tags"></div></div><div id="result-portraits" class="result-portraits"></div></div>
+      <p id="result-description" class="result-intro"></p><section id="friend-profiles" class="friend-profiles" aria-label="匹配群友的人设分析"></section><div class="result-details"><section class="distribution-panel" aria-labelledby="distribution-title"><div class="panel-heading"><h2 id="distribution-title">群友匹配分布</h2><span id="result-completed"></span></div><div id="result-distribution" class="result-distribution"></div><p id="distribution-note" class="distribution-note">百分比表示本次答案的权重占比。</p></section><section class="takeaway-panel" aria-labelledby="takeaway-title"><p class="eyebrow">A NOTE FOR YOU</p><h2 id="takeaway-title">同位体今日任务</h2><p id="result-advice"></p><div class="takeaway-line" aria-hidden="true"></div><p id="result-demo-note" class="result-demo-note"></p></section></div>
+      <details class="answer-review"><summary>回看我的答案 <span aria-hidden="true">＋</span></summary><ol id="answer-review-list"></ol></details><div class="result-actions"><button id="retake-quiz" class="button button-primary" type="button">重新测试 <span aria-hidden="true">↻</span></button><button id="edit-answers" class="text-link" type="button">修改答案 <span aria-hidden="true">→</span></button><a class="text-link result-home" href="./index.html">返回首页 ↗</a></div>
+    </section>
+  </main>
+  <footer class="container quiz-footer"><span>© <span id="quiz-year">2026</span> <span data-site-name>未名</span></span><span>今天，你是哪一位群友？</span></footer>
+  <dialog id="restart-dialog" class="restart-dialog" aria-labelledby="restart-title" aria-describedby="restart-description"><p class="eyebrow">START AGAIN</p><h2 id="restart-title">重新开始这次测试？</h2><p id="restart-description">本次已填写的答案将被清空。</p><div class="restart-actions"><button id="cancel-restart" class="button button-outline" type="button" autofocus>保留答案</button><button id="confirm-restart" class="button button-primary" type="button">清空并开始</button></div></dialog>
+</body>
+</html>
