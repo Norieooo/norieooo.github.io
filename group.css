@@ -7,3 +7,36 @@
 @media(max-width:600px){.group-site .hero{gap:30px}.group-site h1{font-size:clamp(34px,8.6vw,44px);line-height:1.4}.group-site .hero-description{font-size:12px}.group-site .art-caption{font-size:19px}.hero-avatar-grid{top:54px;left:20px;right:20px;gap:7px}.hero-avatar-grid img:nth-child(even){transform:translateY(6px)}.group-site .card-title{font-size:13px;line-height:1.8}.group-site .card-summary{font-size:10px;line-height:1.8}.group-site .card-bottom{font-size:8px;line-height:1.8;gap:5px;align-items:flex-end}.group-site .avatar-cover{aspect-ratio:1}.group-site .card-open{width:24px;height:24px}.group-site .brand{font-size:19px}.group-quiz .quiz-intro h1{font-size:clamp(31px,8vw,40px);line-height:1.5}.group-quiz .quiz-lead{font-size:12px}.group-quiz .quiz-intro-art{aspect-ratio:1.03}.quiz-cast-grid{top:63px;left:20px;right:20px;gap:7px}.quiz-cast-grid img:nth-child(2n){transform:translateY(7px)}.group-quiz .quiz-art-caption{font-size:20px;line-height:1.5;bottom:19px}.group-quiz .question-fieldset legend{font-size:23px;line-height:1.65}.group-quiz .question-hint{font-size:10px;line-height:1.9}.group-quiz .answer-options{gap:10px}.group-quiz .option-content{min-height:73px;padding:14px 12px;gap:11px}.group-quiz .option-text{font-size:12px;line-height:1.9}.group-quiz .option-letter{width:25px;height:25px;flex-shrink:0}.group-quiz .option-check{width:15px;height:15px;flex-shrink:0}.group-quiz .result-heading{grid-template-columns:minmax(0,1fr) 88px;gap:17px;align-items:start}.result-portraits{padding-top:29px}.result-portraits>img{width:88px;height:88px}.result-portraits.is-mixed{gap:5px}.result-portraits.is-mixed>img{width:100%;height:auto}.more-portraits{font-size:15px}.group-quiz .result-heading h1{font-size:clamp(24px,6.5vw,31px);line-height:1.6}.group-quiz .result-kicker{font-size:10px;line-height:1.9;margin-top:18px}.group-quiz .result-tags{margin-top:10px;gap:5px}.group-quiz .result-tag{padding:3px 8px;font-size:9px}.result-intro{font-size:12px;line-height:2.1;margin-top:19px;margin-bottom:22px}.friend-result-card{padding:21px}.friend-card-header,.friend-profiles.is-mixed .friend-card-header{gap:14px;align-items:flex-start}.friend-profile-avatar,.friend-profiles.is-mixed .friend-profile-avatar{width:68px;height:68px}.friend-profile-name,.friend-profiles.is-mixed .friend-profile-name{font-size:16px;line-height:1.75}.friend-persona,.friend-profiles.is-mixed .friend-persona{font-size:10px}.friend-profile-kicker{font-size:8px}.friend-traits{margin-top:16px;gap:6px}.friend-traits>span{font-size:9px;padding:3px 8px}.friend-analysis{font-size:12px;line-height:2.1;margin-top:16px}.friend-signature{margin-top:17px;padding-top:14px}.friend-signature>span{font-size:8px}.friend-signature>p{font-size:12px;line-height:1.9}.group-quiz .distribution-label{font-size:10px;line-height:1.8;gap:12px}.group-quiz .distribution-label>span:last-child{font-size:9px}.group-quiz .result-distribution{gap:17px}.group-quiz .distribution-note{font-size:9px;line-height:2}.group-quiz .panel-heading>span{font-size:8px}.group-quiz .quiz-footer>span:last-child{font-size:8px}.group-quiz .question-bottom>.button{font-size:10px;padding-inline:12px}}
 @media(max-width:370px){.group-site h1{font-size:33px}.hero-avatar-grid{top:51px;gap:5px}.group-quiz .quiz-meta{gap:8px;font-size:9px}.group-quiz .quiz-meta>span+span{padding-left:8px}.group-quiz .result-heading{grid-template-columns:minmax(0,1fr) 74px;gap:13px}.result-portraits>img{width:74px;height:74px}.friend-profile-avatar,.friend-profiles.is-mixed .friend-profile-avatar{width:58px;height:58px}.friend-card-header,.friend-profiles.is-mixed .friend-card-header{gap:12px}.friend-result-card{padding:18px}.group-quiz .question-map{grid-template-columns:repeat(5,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){.hero-avatar-grid img,.card-avatar{transition:none}}
+
+/* 静室入口 */
+.studio-feature { margin-top: 24px; }
+.studio-feature > a {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 22px);
+  padding: 18px clamp(14px, 2vw, 24px);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  transition: background .18s, border-color .18s;
+}
+.studio-feature > a:hover { background: var(--soft); border-color: var(--muted); }
+.studio-feature-mark {
+  flex: 0 0 25px;
+  height: 29px;
+  border: 1px solid var(--muted);
+  box-shadow: 4px 4px 0 -1px var(--surface), 4px 4px 0 var(--muted);
+}
+.studio-feature-copy { display: grid; gap: 2px; }
+.studio-feature-copy strong { font-size: 1.125rem; line-height: 1.35; }
+.studio-feature-copy > span { color: var(--muted); font-size: .875rem; }
+.studio-feature-action {
+  margin-left: auto;
+  color: var(--ink);
+  font-size: .875rem;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: .28em;
+}
+@media (max-width: 380px) {
+  .studio-feature-copy > span, .studio-feature-action { font-size: .8125rem; }
+}
